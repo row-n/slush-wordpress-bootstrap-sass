@@ -1,9 +1,17 @@
-# Slush Wordpress-bootstrap-sass [![Build Status](https://secure.travis-ci.org/rowan.parkinson/slush-wordpress-bootstrap-sass.png?branch=master)](https://travis-ci.org/rowan.parkinson/slush-wordpress-bootstrap-sass) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-wordpress-bootstrap-sass.png)](http://badges.enytc.com/for/npm/slush-wordpress-bootstrap-sass)
+# Slush Wordpress-bootstrap-sass [![Build Status](https://secure.travis-ci.org/row-n/slush-wordpress-bootstrap-sass.png?branch=master)](https://travis-ci.org/rowan.parkinson/slush-wordpress-bootstrap-sass) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-wordpress-bootstrap-sass.png)](http://badges.enytc.com/for/npm/slush-wordpress-bootstrap-sass)
 
 > Bare bones Wordpress theme using Bootstrap-Sass and _s theme
 
 
 ## Getting Started
+
+Set up a [WordPress](https://wordpress.org) instance.
+
+Install `slush` globally:
+
+```bash
+$ npm install -g slush
+```
 
 Install `slush-wordpress-bootstrap-sass` globally:
 
@@ -13,7 +21,7 @@ $ npm install -g slush-wordpress-bootstrap-sass
 
 ### Usage
 
-Create a new folder for your project:
+Create a new theme folder for your project within your WordPress instance:
 
 ```bash
 $ mkdir my-slush-wordpress-bootstrap-sass
@@ -22,7 +30,7 @@ $ mkdir my-slush-wordpress-bootstrap-sass
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-wordpress-bootstrap-sass && slush Wordpress Bootstrap-Sass
+$ cd my-slush-wordpress-bootstrap-sass && slush wordpress-bootstrap-sass
 ```
 
 ## Getting To Know Slush

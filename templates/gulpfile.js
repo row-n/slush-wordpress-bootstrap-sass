@@ -87,7 +87,7 @@ gulp.task('browser-sync', function() {
   ];
 
   browserSync.init(files, {
-    proxy: "localhost/sites/rowan-parkinson/"
+    proxy: "localhost/sites/<%= appName %>/"
   });
 });
 
