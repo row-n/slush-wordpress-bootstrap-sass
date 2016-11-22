@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function <%= appName %>_wpcom_setup() {
+function <%= appNameAltSlug %>_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -26,4 +26,4 @@ function <%= appName %>_wpcom_setup() {
 		);
 	}
 }
-add_action( 'after_setup_theme', '<%= appName %>_wpcom_setup' );
+add_action( 'after_setup_theme', '<%= appNameAltSlug %>_wpcom_setup' );

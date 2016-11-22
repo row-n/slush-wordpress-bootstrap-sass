@@ -107,6 +107,7 @@ gulp.task('default', function (done) {
                 return done();
             }
             answers.appNameSlug = _.slugify(answers.appName);
+            answers.appNameAltSlug = _.underscored(answers.appNameSlug);
             gulp.src(__dirname + '/templates/**')
                 .pipe(template(answers))
                 .pipe(rename(function (file) {

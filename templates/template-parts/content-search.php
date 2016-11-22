@@ -15,7 +15,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php <%= appName %>_posted_on(); ?>
+			<?php <%= appNameAltSlug %>_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -25,6 +25,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php <%= appName %>_entry_footer(); ?>
+		<?php <%= appNameAltSlug %>_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
