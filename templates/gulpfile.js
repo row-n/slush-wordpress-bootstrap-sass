@@ -15,19 +15,19 @@ var runSequence = require('run-sequence');
 
 gulp.task('javascript:bootstrap', function () {
   return gulp.src(['./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'])
-    .pipe(rename('bootstrap-3.3.7.js'))
+    .pipe(rename('bootstrap.js'))
     .pipe(gulp.dest('./js/vendor'))
 });
 
 gulp.task('javascript:jquery', function () {
   return gulp.src(['./node_modules/jquery/dist/jquery.js'])
-    .pipe(rename('jquery-2.2.4.js'))
+    .pipe(rename('jquery.js'))
     .pipe(gulp.dest('./js/vendor'))
 });
 
 gulp.task('javascript:jquery-lazyload', function () {
   return gulp.src(['./node_modules/jquery-lazyload/jquery.lazyload.js'])
-    .pipe(rename('jquery.lazyload-1.9.7.js'))
+    .pipe(rename('jquery.lazyload.js'))
     .pipe(gulp.dest('./js/vendor'))
 });
 
@@ -80,6 +80,8 @@ gulp.task('scss-lint', function() {
     .pipe(scsslint());
 });
 
+gulp.task('styles', ['scss-lint', 'scss']);
+
 gulp.task('browser-sync', function() {
   var files = [
   './style.css',
@@ -90,8 +92,6 @@ gulp.task('browser-sync', function() {
     proxy: "localhost/sites/<%= appNameSlug %>/"
   });
 });
-
-gulp.task('styles', ['scss-lint', 'scss']);
 
 gulp.task('watch', function () {
   gulp.watch(['./frontend/_global/**/*.scss', './frontend/_sass/**/*.scss'], ['styles']);
