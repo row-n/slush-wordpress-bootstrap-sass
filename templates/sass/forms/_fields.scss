@@ -1,33 +1,42 @@
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
+input {
+  &[type="text"],
+  &[type="email"],
+  &[type="url"],
+  &[type="password"],
+  &[type="search"],
+  &[type="number"],
+  &[type="tel"],
+  &[type="range"],
+  &[type="date"],
+  &[type="month"],
+  &[type="week"],
+  &[type="time"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="color"] {
+    border: 1px solid $color--border-input;
+    border-radius: 3px;
+    color: $color--text-input;
+    padding: 3px;
 
-	&:focus {
-		color: $color__text-input-focus;
-	}
+    &:focus {
+      color: $color--text-input-focus;
+    }
+  }
 }
 
 select {
-	border: 1px solid $color__border-input;
+  border: 1px solid $color--border-input;
 }
 
 textarea {
-	width: 100%;
+  border: 1px solid $color--border-input;
+  border-radius: 3px;
+  color: $color--text-input;
+  padding: 3px;
+  width: 100%;
+
+  &:focus {
+    color: $color--text-input-focus;
+  }
 }
