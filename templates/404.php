@@ -26,7 +26,7 @@ get_header(); ?>
 						the_widget( 'WP_Widget_Recent_Posts' );
 
 						// Only show the widget if site has multiple categories.
-						if ( <%= appName %>_categorized_blog() ) :
+						if ( <%= appNameAltSlug %>_categorized_blog() ) :
 					?>
 
 					<div class="widget widget_categories">

@@ -18,27 +18,27 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses <%= appName %>_header_style()
+ * @uses <%= appNameAltSlug %>_header_style()
  */
-function <%= appName %>_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( '<%= appName %>_custom_header_args', array(
+function <%= appNameAltSlug %>_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( '<%= appNameAltSlug %>_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => '<%= appName %>_header_style',
+		'wp-head-callback'       => '<%= appNameAltSlug %>_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', '<%= appName %>_custom_header_setup' );
+add_action( 'after_setup_theme', '<%= appNameAltSlug %>_custom_header_setup' );
 
-if ( ! function_exists( '<%= appName %>_header_style' ) ) :
+if ( ! function_exists( '<%= appNameAltSlug %>_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see <%= appName %>_custom_header_setup().
+ * @see <%= appNameAltSlug %>_custom_header_setup().
  */
-function <%= appName %>_header_style() {
+function <%= appNameAltSlug %>_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*
