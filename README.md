@@ -2,6 +2,7 @@
 
 > Bare bones Wordpress theme using Bootstrap-Sass and _s theme
 
+[![NPM](https://nodei.co/npm/slush-wordpress-bootstrap-sass.png)](https://nodei.co/npm/slush-wordpress-bootstrap-sass/)
 
 ## Getting Started
 
@@ -24,14 +25,31 @@ $ npm install -g slush-wordpress-bootstrap-sass
 Create a new theme folder for your project within your WordPress instance:
 
 ```bash
-$ mkdir my-slush-wordpress-bootstrap-sass
+$ mkdir my-wordpress-bootstrap-theme
 ```
 
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-wordpress-bootstrap-sass && slush wordpress-bootstrap-sass
+$ cd my-wordpress-bootstrap-theme && slush wordpress-bootstrap-sass
 ```
+
+## Commands
+
+For previewing your site on a local environment, execute:
+
+```bash
+$ gulp
+```
+
+_If this is the first time running the theme you will need to asign it within Wordpress admin_
+
+## Todos
+
+- [ ] Boostrap CSS
+- [x] Boostrap SASS
+- [ ] Boostrap LESS
+- [ ] Add Bower for frontend dependencies
 
 ## Getting To Know Slush
 

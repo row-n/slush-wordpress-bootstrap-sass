@@ -89,7 +89,9 @@ gulp.task('browser-sync', function() {
   ];
 
   browserSync.init(files, {
-    proxy: "localhost/sites/<%= appNameSlug %>/"
+    proxy: {
+      target: "<%= appProxy %>/"
+    }
   });
 });
 
