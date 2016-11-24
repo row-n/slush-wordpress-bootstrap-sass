@@ -17,7 +17,7 @@ var gulp        = require('gulp'),
     _           = require('underscore.string'),
     inquirer    = require('inquirer'),
     path        = require('path'),
-    version     = 'v1.0.0';
+    version     = 'v0.2.1';
 
 function format(string) {
     var username = string.toLowerCase();
@@ -55,31 +55,38 @@ var defaults = (function () {
 gulp.task('default', function (done) {
     var prompts = [{
         name: 'appName',
-        message: 'What is the name of your project?',
+        message: gutil.colors.red('What is the name of your project?'),
         default: defaults.appName
     }, {
         name: 'appDescription',
-        message: 'What is the description?'
+        message: gutil.colors.red('What is the description?'),
+        default: 'An awesome Wordpress Bootstrap theme'
     }, {
         name: 'appVersion',
-        message: 'What is the version of your project?',
+        message: gutil.colors.red('What is the version of your project?'),
         default: '0.1.0'
     }, {
+        type: 'list',
+        name: 'appProxy',
+        message: gutil.colors.red('What is the proxy you want to use?'),
+        choices: ['localhost/mySite', 'mySite.local'],
+        default: 'localhost/mySite'
+    }, {
         name: 'authorName',
-        message: 'What is the author name?',
+        message: gutil.colors.red('What is the author name?'),
         default: defaults.authorName
     }, {
         name: 'authorEmail',
-        message: 'What is the author email?',
+        message: gutil.colors.red('What is the author email?'),
         default: defaults.authorEmail
     }, {
         name: 'userName',
-        message: 'What is the github username?',
+        message: gutil.colors.red('What is the github username?'),
         default: defaults.userName
     }, {
         type: 'confirm',
         name: 'moveon',
-        message: 'Continue?'
+        message: gutil.colors.red('Continue?')
     }];
 
     gutil.log(
@@ -108,6 +115,11 @@ gulp.task('default', function (done) {
             }
             answers.appNameSlug = _.slugify(answers.appName);
             answers.appNameAltSlug = _.underscored(answers.appNameSlug);
+            if (answers.appProxy == 'localhost/mySite') {
+                answers.appProxy = 'localhost/' + answers.appNameSlug;
+            } else if (answers.appProxy == 'mySite.local') {
+                answers.appProxy = answers.appNameSlug + '.local';
+            }
             gulp.src(__dirname + '/templates/**')
                 .pipe(template(answers))
                 .pipe(rename(function (file) {
